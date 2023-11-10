@@ -41,16 +41,32 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
     <FontAwesome />
   </head>
 
-  <body
-    class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8"
-  >
+  <body class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8">
     <Header />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script type="text/x-mathjax-config">
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          processEscapes: true,
+        },
+      };
+    </script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
     <main id="main">
       <section class="blog-post prose max-w-none prose-newspaper">
-        <h1 class="
-            m-0 pt-1 mb-[0.375em] 
-            after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current  
-        ">{title}</h1>
+        <h1
+          class="m-0 pt-1 mb-[0.375em] after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current"
+        >
+          {title}
+        </h1>
         <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
         <slot name="content" />
       </section>
