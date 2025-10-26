@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html class="theme-newspaper astro-WWZ2PMX7" lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Blogster">
+    <meta name="theme-color" content="#ffffff">
+
+<!-- 
+  This is an example. 
+  Use https://realfavicongenerator.net to generate the icons and manifest. 
+-->
+<link href="/favicon.ico" rel="shortcut icon">
+
+    <!-- Primary Meta Tags --><title>Don&#39;t Lose Your Digital Keys: The Lazy Person&#39;s Guide to KeePassXC Backups</title>
+<meta name="title" content="Don't Lose Your Digital Keys: The Lazy Person's Guide to KeePassXC Backups">
+<meta name="description" content="A simple guide to setting up automatic backups in KeePassXC to protect your password database.">
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="Don't Lose Your Digital Keys: The Lazy Person's Guide to KeePassXC Backups">
+<meta property="og:description" content="A simple guide to setting up automatic backups in KeePassXC to protect your password database.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yourwebsiteurl.com/blog/keepassxc-backups">
+<meta property="article:author" content="Laureano Oliva">
+<meta property="article:published_time" content="2023-12-13T00:00:00.000Z">
+
+
+
+
+
+<!-- Twitter -->
+<meta property="twitter:title" content="Don't Lose Your Digital Keys: The Lazy Person's Guide to KeePassXC Backups">
+<meta property="twitter:description" content="A simple guide to setting up automatic backups in KeePassXC to protect your password database.">
+<meta property="twitter:site" content="@yourtwitterhandle">
+<meta property="twitter:creator" content="@yourtwitterhandle">
+<meta property="twitter:card" content="summary_large_image">
+
+
+<!-- {twitter.url && <meta property="twitter:url" content={twitter.url} />} -->
+
+    <!-- 
+    We don't want to use <link /> to load fonts from Google CDN 
+    but if you want to switch font this is the easiest way 
+    to check how your page will look with the new font.
+--><!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=block"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+        rel="stylesheet"
+    />
+--><link rel="preload" href="/fonts/roboto-mono-v22-latin-regular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/roboto-mono-v22-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/roboto-mono-v22-latin-italic.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><style>
+    /* roboto-mono-regular - latin */
+    @font-face {
+      font-family: "Roboto Mono";
+      font-style: normal;
+      font-weight: 400;
+      src: local(""),
+        url("/fonts/roboto-mono-v22-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/roboto-mono-v22-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* roboto-mono-700 - latin */
+    @font-face {
+      font-family: "Roboto Mono";
+      font-style: normal;
+      font-weight: 700;
+      src: local(""),
+        url("/fonts/roboto-mono-v22-latin-700.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/roboto-mono-v22-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* roboto-mono-italic - latin */
+    @font-face {
+      font-family: "Roboto Mono";
+      font-style: italic;
+      font-weight: 400;
+      src: local(""),
+        url("/fonts/roboto-mono-v22-latin-italic.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/roboto-mono-v22-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+
+    <script>
+  // figure out user's preferred theme and set it as html class for tailwind before paint
+  (function () {
+    if (typeof window !== "undefined") {
+      const isSystemColorSchemeDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const storageTheme = sessionStorage.getItem("theme");
+      if (!storageTheme && isSystemColorSchemeDark) {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#262626";
+      } else if (storageTheme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#262626";
+      } else {
+        // we already server render light theme
+        document.head.children.namedItem("theme-color").content = "#ffffff";
+      }
+    }
+  })();
+</script>
+
+    <link href="/fontawesome/css/fontawesome.css" rel="stylesheet"><link href="/fontawesome/css/brands.css" rel="stylesheet"><link href="/fontawesome/css/solid.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/_slug_.8515a42c.css" />
+<link rel="stylesheet" href="/assets/_slug_.80c17dee.css" /><script type="module" src="/hoisted.c2fbbe1c.js"></script></head>
+
+  <body class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8 astro-WWZ2PMX7">
+    <header class="astro-NGLEQTFP">
+  <a class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial] astro-NGLEQTFP" href="#main">
+    Skip to content
+  </a>
+  <nav class="astro-NGLEQTFP">
+    <section class="text-text-bold astro-NGLEQTFP">
+      <ul class="unset flex gap-4 [&>li]:p-0 astro-NGLEQTFP">
+        <li class="astro-NGLEQTFP"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/" class="astro-NGLEQTFP unset animated-link">Home</a></li>
+        <li class="astro-NGLEQTFP"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/blog" class="astro-NGLEQTFP show unset animated-link">Blog</a></li>
+        <li class="astro-NGLEQTFP"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/projects" class="astro-NGLEQTFP unset animated-link">Projects</a></li>
+      </ul>
+    </section>
+  </nav>
+  <div class="justify-self-end flex items-center content-center text-text-bold astro-NGLEQTFP">
+    <mode-toggle class="flex astro-ZBNHZGTA">
+  <button class="justify-self-end bg-black dark:bg-white ml-4 inline-flex h-6 w-11 items-center rounded-full astro-ZBNHZGTA" id="mode-toggle" role="switch" type="button" tabindex="0" aria-checked="false" data-headlessui-state=""><span class="sr-only astro-ZBNHZGTA">Toggle dark mode</span><span id="mode-circle" class="light inline-block h-4 w-4 rounded-full bg-gradient-to-tr invisible astro-ZBNHZGTA"><span class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-white scale-[0] astro-ZBNHZGTA"></span>
+    </span>
+  </button>
+</mode-toggle>
+
+<script>
+  function updateHTMLTheme(mode) {
+    const themeColorMetaTag = document.head.querySelector(
+      'meta[name="theme-color"]'
+    );
+
+    if (mode === "dark") {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+      if (themeColorMetaTag) {
+        // @ts-ignore
+        themeColorMetaTag.content = "#262626";
+      }
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      if (themeColorMetaTag) {
+        // @ts-ignore
+        themeColorMetaTag.content = "#ffffff";
+      }
+    }
+  }
+  function updateStorageTheme(mode) {
+    if (mode === "dark") {
+      sessionStorage.setItem("theme", "dark");
+    } else {
+      sessionStorage.setItem("theme", "light");
+    }
+  }
+  class ModeToggle extends HTMLElement {
+    constructor() {
+      super();
+      // keep a property to track current mode
+      this._currentMode = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    }
+
+    connectedCallback() {
+      const toggle = this.querySelector("button");
+      const iconElem = toggle?.querySelector("#mode-circle");
+
+      if (!iconElem || !toggle) return;
+
+      // set the toggle mode based on the html classname set in ThemeScript.astro
+      if (this._currentMode === "dark") {
+        iconElem.classList.remove("light");
+        iconElem.classList.add("dark");
+      }
+
+      // we load the toggle invisible to prevent flash
+      // remove visibility class after setting initial dark/light class
+      iconElem.classList.remove("invisible");
+
+      // Each time the button is clicked, update the mode.
+      toggle.addEventListener("click", () => {
+        if (this._currentMode === "dark") {
+          const modeToSwitch = "light";
+          iconElem.classList.remove("dark");
+          iconElem.classList.add("light");
+          updateHTMLTheme(modeToSwitch);
+          updateStorageTheme(modeToSwitch);
+          this._currentMode = modeToSwitch;
+        } else {
+          const modeToSwitch = "dark";
+          iconElem.classList.remove("light");
+          iconElem.classList.add("dark");
+          updateHTMLTheme(modeToSwitch);
+          updateStorageTheme(modeToSwitch);
+          this._currentMode = modeToSwitch;
+        }
+
+        // prevent slide animation on page load for dark mode
+        if (!iconElem.classList.contains("duration-300")) {
+          iconElem.classList.add("duration-300");
+        }
+      });
+    }
+  }
+
+  if (!customElements.get("mode-toggle")) {
+    customElements.define("mode-toggle", ModeToggle);
+  }
+</script>
+
+
+  </div>
+</header>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          processEscapes: true,
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <main id="main" class="astro-WWZ2PMX7">
+      <section class="blog-post prose max-w-none prose-newspaper astro-WWZ2PMX7">
+        <h1 class="m-0 pt-1 mb-[0.375em] after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current astro-WWZ2PMX7">
+          Don&#39;t Lose Your Digital Keys: The Lazy Person&#39;s Guide to KeePassXC Backups
+        </h1>
+        <time class="block mb-[2em] text-text-muted astro-WWZ2PMX7">Dec 12, 2023</time>
+        <article><p><img src="/images/be8d0fae-91c6-4a1b-8c50-cb1459c0ec31.webp" alt="Backup Image"/></p><p>Let's be real: <strong>backup advice is usually about as exciting as watching paint dry</strong>. But losing your password database? That's the digital equivalent of your house keys, wallet, and social life all vanishing into the void at once.</p><p>I'm going to show you how to set up KeePassXC backups so simple that even <em>future-you</em> (who's probably tired and just wants to log into Netflix) will be grateful.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="why-bother-the-horror-stories" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="Why Bother? The Horror Stories" href="#why-bother-the-horror-stories" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>Why Bother? The Horror Stories</span></h2>
+  </div><p>Picture this: You've spent <strong>years curating the perfect password database</strong>. Then one day, your computer decides to have a meltdown. Or you accidentally delete the wrong file. Or your cat walks across the keyboard while you're making changes (<em>true story</em>).</p><p>Without backups, you're not just locked out of instagram you're locked out of your <strong>email, banking, and that secret Pinterest board</strong> about miniature dollhouses. It's <em>digital homelessness</em>.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="the-setup:-5-minutes-now-peace-of-mind-forever" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="The Setup: 5 Minutes Now, Peace of Mind Forever" href="#the-setup:-5-minutes-now-peace-of-mind-forever" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>The Setup: 5 Minutes Now, Peace of Mind Forever</span></h2>
+  </div><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="step-1:-find-the-magic-checkbox" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="Step 1: Find the Magic Checkbox" href="#step-1:-find-the-magic-checkbox" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>Step 1: Find the Magic Checkbox</span></h3>
+  </div><p>Open KeePassXC and head to <strong>Tools → Settings → General</strong>. Scroll down until you see <strong>&quot;Backup database file before saving.&quot;</strong> It's located <strong>in the &quot;File Management&quot; section</strong>. Check that box. <strong>Congratulations, you've just implemented 90% of a decent backup strategy</strong>.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="step-2:-outsmart-your-future-self" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="Step 2: Outsmart Your Future Self" href="#step-2:-outsmart-your-future-self" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>Step 2: Outsmart Your Future Self</span></h3>
+  </div><p>The default backup setup has one flaw: it keeps <strong>overwriting the same backup file</strong>. That's like having only one spare key and constantly recutting it. What if you don't realize you made a mistake until <em>three changes later</em>?</p><p>Here's the pro move: add <strong><code>{TIME}</code></strong> to your backup path:</p><pre class="language-plaintext"><code class="language-plaintext">/home/yourname/backups/{DB_FILENAME}.{TIME}.kdbx
+</code></pre>
+
+<p>Now every save creates a <strong>timestamped backup</strong>. It's like having a <em>time machine for your passwords</em>.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="the-&#34;oh-crap&#34;-scenarios-your-backups-actually-protect-against" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="The &#34;Oh Crap&#34; Scenarios Your Backups Actually Protect Against" href="#the-&#34;oh-crap&#34;-scenarios-your-backups-actually-protect-against" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>The &quot;Oh Crap&quot; Scenarios Your Backups Actually Protect Against</span></h2>
+  </div><ul><li><strong>The Accidental Delete:</strong> That moment of panic when you delete an entry and <em>immediately hit save</em></li><li><strong>File Corruption:</strong> When your database file decides to become <em>modern art</em> instead of functional data</li><li><strong>Sync Conflicts:</strong> When cloud services have a disagreement and your file gets caught in the crossfire</li></ul><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="but-wait-there's-a-catch-(isn't-there-always)" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="But Wait, There's a Catch (Isn't There Always?)" href="#but-wait-there's-a-catch-(isn't-there-always)" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>But Wait, There&#39;s a Catch (Isn&#39;t There Always?)</span></h2>
+  </div><p><strong>This backup setting sticks to the application, not your database file</strong>. If you open KeePassXC on your laptop <em>and</em> desktop, you need to set this up on <em>both</em>.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="the-lazy-person's-extra-credit" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="The Lazy Person's Extra Credit" href="#the-lazy-person's-extra-credit" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>The Lazy Person&#39;s Extra Credit</span></h2>
+  </div><p>If you <em>really</em> want to sleep well at night, set up a <strong>second backup location</strong>. Maybe an external hard drive that only gets plugged in once a month. Or a different cloud service than your main sync. Because <strong>one backup is good, but two backups means you can confidently ignore that little voice</strong> saying &quot;<em>are you sure you're backed up?</em>&quot;</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="the-bottom-line" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="The Bottom Line" href="#the-bottom-line" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>The Bottom Line</span></h2>
+  </div><p>Setting up KeePassXC backups is like flossing: <em>everyone knows they should do it, but most people don't until they have a problem</em>. Except unlike flossing, <strong>this takes five minutes and you'll never have to think about it again</strong>.</p><p>Your future self—the one who <em>didn't</em> just lose 200 passwords—will thank you. Happy backing up!</p></article>
+      </section>
+    </main>
+    <footer class="text-sm leading-[1.75] mt-4 astro-ELCN4FCP">
+  <div class="astro-ELCN4FCP">
+    This blog is powered by <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00abda] to-[#1476ff] hover:after:bg-gradient-to-r hover:after:from-[#00abda] hover:after:to-[#1476ff] astro-ELCN4FCP" href="https://astro.build" target="_blank">Astro</a> with the <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00abda] to-[#1476ff] hover:after:bg-gradient-to-r hover:after:from-[#00abda] hover:after:to-[#1476ff] astro-ELCN4FCP" href="https://github.com/flexdinesh/blogster" target="_blank">Blogster Newspaper</a>
+  </div>
+</footer>
+
+
+    
+  </body>
+</html>
