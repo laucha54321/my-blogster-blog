@@ -1,9 +1,11 @@
 ---
 external: false
 title: "Don't Lose Your Digital Keys: The Lazy Person's Guide to KeePassXC Backups"
-description: ""
+description: "A simple guide to setting up automatic backups in KeePassXC to protect your password database."
 date: 2023-12-13
 ---
+
+![Backup Image](/images/be8d0fae-91c6-4a1b-8c50-cb1459c0ec31.webp)
 
 Let's be real: **backup advice is usually about as exciting as watching paint dry**. But losing your password database? That's the digital equivalent of your house keys, wallet, and social life all vanishing into the void at once.
 
