@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html class="theme-newspaper astro-WWZ2PMX7" lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Blogster">
+    <meta name="theme-color" content="#ffffff">
+
+<!-- 
+  This is an example. 
+  Use https://realfavicongenerator.net to generate the icons and manifest. 
+-->
+<link href="/favicon.ico" rel="shortcut icon">
+
+    <!-- Primary Meta Tags --><title>Microwaving Pizza, Not Your Brain: Smarter Site Blocking with NextDNS</title>
+<meta name="title" content="Microwaving Pizza, Not Your Brain: Smarter Site Blocking with NextDNS">
+<meta name="description" content="Bienvenido a mi Blog!">
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="Microwaving Pizza, Not Your Brain: Smarter Site Blocking with NextDNS">
+<meta property="og:description" content="Bienvenido a mi Blog!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yourwebsiteurl.com/blog/Microwaving%20Pizza%20Not%20Your%20Brain%20Smarter%20Site%20Blocking%20with%20NextDNS">
+<meta property="article:author" content="Laureano Oliva">
+<meta property="article:published_time" content="2025-10-17T00:00:00.000Z">
+
+
+
+
+
+<!-- Twitter -->
+<meta property="twitter:title" content="Microwaving Pizza, Not Your Brain: Smarter Site Blocking with NextDNS">
+<meta property="twitter:description" content="Bienvenido a mi Blog!">
+<meta property="twitter:site" content="@yourtwitterhandle">
+<meta property="twitter:creator" content="@yourtwitterhandle">
+<meta property="twitter:card" content="summary_large_image">
+
+
+<!-- {twitter.url && <meta property="twitter:url" content={twitter.url} />} -->
+
+    <!-- 
+    We don't want to use <link /> to load fonts from Google CDN 
+    but if you want to switch font this is the easiest way 
+    to check how your page will look with the new font.
+--><!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=block"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+        rel="stylesheet"
+    />
+--><link rel="preload" href="/fonts/roboto-mono-v22-latin-regular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/roboto-mono-v22-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/roboto-mono-v22-latin-italic.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><style>
+    /* roboto-mono-regular - latin */
+    @font-face {
+      font-family: "Roboto Mono";
+      font-style: normal;
+      font-weight: 400;
+      src: local(""),
+        url("/fonts/roboto-mono-v22-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/roboto-mono-v22-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* roboto-mono-700 - latin */
+    @font-face {
+      font-family: "Roboto Mono";
+      font-style: normal;
+      font-weight: 700;
+      src: local(""),
+        url("/fonts/roboto-mono-v22-latin-700.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/roboto-mono-v22-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* roboto-mono-italic - latin */
+    @font-face {
+      font-family: "Roboto Mono";
+      font-style: italic;
+      font-weight: 400;
+      src: local(""),
+        url("/fonts/roboto-mono-v22-latin-italic.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/roboto-mono-v22-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+
+    <script>
+  // figure out user's preferred theme and set it as html class for tailwind before paint
+  (function () {
+    if (typeof window !== "undefined") {
+      const isSystemColorSchemeDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const storageTheme = sessionStorage.getItem("theme");
+      if (!storageTheme && isSystemColorSchemeDark) {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#262626";
+      } else if (storageTheme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#262626";
+      } else {
+        // we already server render light theme
+        document.head.children.namedItem("theme-color").content = "#ffffff";
+      }
+    }
+  })();
+</script>
+
+    <link href="/fontawesome/css/fontawesome.css" rel="stylesheet"><link href="/fontawesome/css/brands.css" rel="stylesheet"><link href="/fontawesome/css/solid.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/_slug_.dce679b3.css" />
+<link rel="stylesheet" href="/assets/_slug_.80c17dee.css" /><script type="module" src="/hoisted.c2fbbe1c.js"></script></head>
+
+  <body class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8 astro-WWZ2PMX7">
+    <header class="astro-VV76ZG2G">
+  <a class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial] astro-VV76ZG2G" href="#main">
+    Skip to content
+  </a>
+  <nav class="astro-VV76ZG2G">
+    <section class="text-text-bold astro-VV76ZG2G">
+      <ul class="unset flex gap-4 [&>li]:p-0 astro-VV76ZG2G">
+        <li class="astro-VV76ZG2G"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/" class="astro-VV76ZG2G unset animated-link">Home</a></li>
+        <li class="astro-VV76ZG2G"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/blog" class="astro-VV76ZG2G show unset animated-link">Blog</a></li>
+        <li class="astro-VV76ZG2G"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/projects" class="astro-VV76ZG2G unset animated-link">Proyectos</a></li>
+      </ul>
+    </section>
+  </nav>
+  <div class="justify-self-end flex items-center content-center text-text-bold astro-VV76ZG2G">
+    <mode-toggle class="flex astro-ZBNHZGTA">
+  <button class="justify-self-end bg-black dark:bg-white ml-4 inline-flex h-6 w-11 items-center rounded-full astro-ZBNHZGTA" id="mode-toggle" role="switch" type="button" tabindex="0" aria-checked="false" data-headlessui-state=""><span class="sr-only astro-ZBNHZGTA">Toggle dark mode</span><span id="mode-circle" class="light inline-block h-4 w-4 rounded-full bg-gradient-to-tr invisible astro-ZBNHZGTA"><span class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-white scale-[0] astro-ZBNHZGTA"></span>
+    </span>
+  </button>
+</mode-toggle>
+
+<script>
+  function updateHTMLTheme(mode) {
+    const themeColorMetaTag = document.head.querySelector(
+      'meta[name="theme-color"]'
+    );
+
+    if (mode === "dark") {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+      if (themeColorMetaTag) {
+        // @ts-ignore
+        themeColorMetaTag.content = "#262626";
+      }
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      if (themeColorMetaTag) {
+        // @ts-ignore
+        themeColorMetaTag.content = "#ffffff";
+      }
+    }
+  }
+  function updateStorageTheme(mode) {
+    if (mode === "dark") {
+      sessionStorage.setItem("theme", "dark");
+    } else {
+      sessionStorage.setItem("theme", "light");
+    }
+  }
+  class ModeToggle extends HTMLElement {
+    constructor() {
+      super();
+      // keep a property to track current mode
+      this._currentMode = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    }
+
+    connectedCallback() {
+      const toggle = this.querySelector("button");
+      const iconElem = toggle?.querySelector("#mode-circle");
+
+      if (!iconElem || !toggle) return;
+
+      // set the toggle mode based on the html classname set in ThemeScript.astro
+      if (this._currentMode === "dark") {
+        iconElem.classList.remove("light");
+        iconElem.classList.add("dark");
+      }
+
+      // we load the toggle invisible to prevent flash
+      // remove visibility class after setting initial dark/light class
+      iconElem.classList.remove("invisible");
+
+      // Each time the button is clicked, update the mode.
+      toggle.addEventListener("click", () => {
+        if (this._currentMode === "dark") {
+          const modeToSwitch = "light";
+          iconElem.classList.remove("dark");
+          iconElem.classList.add("light");
+          updateHTMLTheme(modeToSwitch);
+          updateStorageTheme(modeToSwitch);
+          this._currentMode = modeToSwitch;
+        } else {
+          const modeToSwitch = "dark";
+          iconElem.classList.remove("light");
+          iconElem.classList.add("dark");
+          updateHTMLTheme(modeToSwitch);
+          updateStorageTheme(modeToSwitch);
+          this._currentMode = modeToSwitch;
+        }
+
+        // prevent slide animation on page load for dark mode
+        if (!iconElem.classList.contains("duration-300")) {
+          iconElem.classList.add("duration-300");
+        }
+      });
+    }
+  }
+
+  if (!customElements.get("mode-toggle")) {
+    customElements.define("mode-toggle", ModeToggle);
+  }
+</script>
+
+
+  </div>
+</header>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          processEscapes: true,
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <main id="main" class="astro-WWZ2PMX7">
+      <section class="blog-post prose max-w-none prose-newspaper astro-WWZ2PMX7">
+        <h1 class="m-0 pt-1 mb-[0.375em] after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current astro-WWZ2PMX7">
+          Microwaving Pizza, Not Your Brain: Smarter Site Blocking with NextDNS
+        </h1>
+        <time class="block mb-[2em] text-text-muted astro-WWZ2PMX7">Oct 16, 2025</time>
+        <article><p>If you're trying to be more intentional with how you spend your time online, blocking certain domain names can help curb mindless scrolling.</p><p>Customizing your DNS is one of the easiest ways to do this. It can stop you—or anyone else—from spending two hours refreshing Reddit to see if someone replied to your post wondering why your girlfriend is both stunning and somehow still into you.</p><p>Before we dive into the setup, let’s establish a guiding principle: aim for simplicity. DNS-level blocking is powerful, but if overused, it becomes a chore. Choose a setup you can stick with—one that doesn’t require constant tweaking.</p><p>For instance, let’s say you’re trying to reduce your time on YouTube. If you still want occasional access—like searching “how to microwave frozen pizza”—then blocking YouTube entirely at the DNS level isn’t the right move. DNS blocking is binary: it’s either fully accessible or completely unreachable. So unless you're ready to give it up entirely, it's better to explore softer restrictions like browser extensions, app timers.</p><p>Okay let's start:</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="1.-set-up-your-next-dns-account-and-profile" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="1. Set up your Next DNS Account and Profile" href="#1.-set-up-your-next-dns-account-and-profile" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>1. Set up your Next DNS Account and Profile</span></h2>
+  </div><p>Go to <a href="https://nextdns.io/">NextDNS</a> and Sign Up. The steps are pretty straight forward. It's actually so easy that you will be confused when you see that the only two fields you need to register is an email and a password.</p><p>Once you register you will see a screen and in the top it will say My First Profile. So right now you already have a custom DNS profile, but we need to customize this profile. This profile will by default have ad and trackers blocklist setup.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="2.-blocking-websites" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="2. Blocking websites" href="#2.-blocking-websites" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>2. Blocking websites</span></h2>
+  </div><p>To block websites you have two options in NextDNS, either using a &quot;Deny List&quot; or using &quot;Parental Control restrictions'&quot;. Both options are useful, and you can decide depending on what you want to achieve. Also both options can be used in conjunction.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="2.1-deny-list" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="2.1 Deny List" href="#2.1-deny-list" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>2.1 Deny List</span></h3>
+  </div><p>On the top Panel you can go to Deny list. There you can setup any domain you want to block. Here's a snapshot of the domains I personally block. Your list will depend on your goals:</p><p><img src="/images/20251017202541.png" alt="Snapshot"/></p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="2.2-parental-control" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="2.2 Parental Control" href="#2.2-parental-control" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>2.2 Parental Control</span></h3>
+  </div><p>Parental Controls offer less flexibility—you can only toggle predefined sites. As can bee seen here:</p><p><img src="/images/20251017202746.png" alt="Snapshot"/></p><p>Still, they come with useful features like:</p><h4 id="category-blocking" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+          <a aria-label="link to this heading" aria-describedby="Category Blocking" href="#category-blocking" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+              <i class="fa-solid fa-hashtag"></i>
+          </a>
+      </span><span>Category Blocking</span></h4><p>This is exactly what it sound like. It has some categories that you are able to block like for example porn, gambling, dating, privacy, social networks, etc.</p><p><img src="/images/20251017203232.png" alt="Snapshot"/></p><h4 id="recreation-time" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+          <a aria-label="link to this heading" aria-describedby="Recreation Time" href="#recreation-time" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+              <i class="fa-solid fa-hashtag"></i>
+          </a>
+      </span><span>Recreation Time</span></h4><p>This feature is surprisingly handy. You can schedule windows of access for blocked categories—perfect for those who want to keep things like adult content off-limits except for, say, Saturday night existential spirals.</p><p><img src="/images/20251017203247.png" alt="Snapshot"/></p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="3.-blocking-ads" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="3. Blocking Ads" href="#3.-blocking-ads" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>3. Blocking Ads</span></h2>
+  </div><p>Ads hijack your attention—and sometimes your appetite. You see a burger ad, and two hours later you're ordering Uber Eats.</p><p>In the <strong>Privacy</strong> tab, under <strong>Blocklists</strong>, you can add community-maintained lists that block telemetry, ads, malware, and trackers. These work like curated deny lists.</p><p>You might think that adding all the lists you can is a good idea, but keep in mind that adds, trackers, and telemetry is integrated into many different process on the websites you visit so some lists might block a lot of things but will also break many sites, so this is a balancing game.</p><p>Sites blocked by mistake will increase the more blocklists you add. So keep that in mind.</p><p>Start small. Pick 2–3 well-maintained lists and test your browsing experience. If sites break, scale back.</p><p>Here are the Lists I am using:</p><ul><li>NextDNS Ads &amp; Trackers Blocklist</li><li>AdGuard DNS filter</li><li>OISD</li><li>notracking</li><li>EasyList</li><li>NSABlocklist</li><li>WindowsSpyBlocker (Spy)</li><li>HaGeZi - Multi PRO++</li></ul><p><img src="/images/20251017205427.png" alt="Snapshot"/></p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="4.-how-to-set-it-up-in-your-device" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="4. How to set it up in your device" href="#4.-how-to-set-it-up-in-your-device" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>4. How to set it up in your device</span></h2>
+  </div><p>Once your profile is configured, it’s time to apply it to your device.</p><p>Whether you're on iPhone, Android, Mac, Linux, BSD, Windows, or even a router, go to the <strong>Setup</strong> tab and follow the guide for your platform.</p><p>So for this you should go to the Setup Tab in Next DNS and look for the Setup Guide that is appropriate for your Device.</p><p>The only recommendation I will give for this, is try not to use an application. Manual setup is usually cleaner and gives you full control. Avoid installing extra apps unless absolutely necessary—they often come with baggage.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="999.-bonus" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="999. Bonus" href="#999.-bonus" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>999. Bonus</span></h2>
+  </div><p>Do you care about privacy? Then there is also a cool tab under the blocklists in the privacy tab that helps you block native telemetry for various systems. I personally use the Windows, and Samsung Blockers.</p><p>These telemetry blockers are great if you're serious about privacy. Just remember: blocking too aggressively can break things, so test and adjust as needed.</p></article>
+      </section>
+    </main>
+    <footer class="text-sm leading-[1.75] mt-4 astro-OA3G2NKD">
+  <div class="astro-OA3G2NKD">
+    Este blog utiliza <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00abda] to-[#1476ff] hover:after:bg-gradient-to-r hover:after:from-[#00abda] hover:after:to-[#1476ff] astro-OA3G2NKD" href="https://astro.build" target="_blank">Astro</a> con el template <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00abda] to-[#1476ff] hover:after:bg-gradient-to-r hover:after:from-[#00abda] hover:after:to-[#1476ff] astro-OA3G2NKD" href="https://github.com/flexdinesh/blogster" target="_blank">Blogster Newspaper</a>
+  </div>
+</footer>
+
+
+    
+  </body>
+</html>
