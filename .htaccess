@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/dist/
+RewriteRule ^(.*)$ /blog/dist/$1 [L]
