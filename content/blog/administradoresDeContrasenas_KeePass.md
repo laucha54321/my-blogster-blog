@@ -1,5 +1,6 @@
 ---
 external: false
+draft: true
 title: "Backups en KeePassXC: Fácil y Rápido"
 description: "Cómo Hago Copias de Seguridad en KeePassXC"
 date: 2023-12-13

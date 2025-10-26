@@ -1,5 +1,6 @@
 ---
 external: false
+draft: true
 title: Prueba de Conceptos - Drizzle ORM
 description: ""
 date: 2023-10-28
@@ -17,7 +18,7 @@ La documentación de Drizzle es efectiva, siendo al mismo tiempo simple y comple
 
 La comunidad de Drizzle es muy dinámica y, según las tendencias actuales, es probable que se convierta en uno de los ORMs más populares en el entorno de TypeScript. A pesar de tener menos estrellas en GitHub en comparación con Prisma, es importante destacar que Drizzle es un proyecto más reciente.
 
-![Estrellas Repositorios](/content/blog/IMG/star-history-20231026.webp)
+![Estrellas Repositorios](/images/star-history-20231026.webp)
 
 ---
 
@@ -62,7 +63,7 @@ Una vez que se ha realizado una modificación en el esquema de datos en Drizzle,
 
 Drizzle también incluye una función interesante que se activa cuando se renombra una columna. Esta función permite crear una nueva columna o modificar el nombre de la columna existente, evitando así la eliminación accidental de una columna.
 
-![Menu Migración](/content/blog/IMG/image.png)
+![Menu Migración](/images/image.png)
 
 ## Generar el cliente
 
@@ -75,7 +76,7 @@ Drizzle proporciona al usuario la posibilidad de utilizar operadores similares a
 En contraste, Prisma utiliza algunos operadores que resultan más amigables para aquellos que no están familiarizados con SQL. Esta diferencia en enfoque es importante y debe ser tenida en cuenta al elegir entre Drizzle y Prisma.
 El formato de la tabla seria el siguiente:
 
-![Alt text](/content/blog/IMG/image-4.png)
+![Alt text](/images/image-4.png)
 
 El siguiente seria el formato de los datos:
 
@@ -146,11 +147,11 @@ Desde un punto de vista técnico, es relevante mencionar que estos benchmarks so
 
 Este conjunto de pruebas nos proporciona información sobre la cantidad promedio de consultas por segundo. Para ilustrar este punto, comencemos con los datos relacionados con una operación "select all".
 
-![Benchmark Select](/content/blog/IMG/image-2.webp)
+![Benchmark Select](/images/image-2.webp)
 
 Como se puede observar, incluso en una consulta aparentemente sencilla, como un "select all," se aprecia una marcada diferencia en la cantidad de consultas realizadas por segundo entre el uso de "prepared statements" y la omisión de los mismos.
 
-![Benchmark Join](/content/blog/IMG/image-3.webp)
+![Benchmark Join](/images/image-3.webp)
 
 En este ejemplo, que implica una consulta algo más compleja al incluir un "select," "where" y un "left join," la diferencia en el rendimiento es aún más evidente. Preparar una consulta de esta magnitud en cada ejecución tiene un impacto notable en la cantidad de consultas que se pueden realizar por segundo.
 

@@ -3,7 +3,7 @@
 
 export const SITE_TITLE = "Laureano Oliva";
 export const SITE_DESCRIPTION =
-  "Bienvenido a mi Blog!";
+  "Welcome to my personal website where I share my projects and thoughts.";
 export const TWITTER_HANDLE = "@yourtwitterhandle";
 export const MY_NAME = "Laureano Oliva";
 
