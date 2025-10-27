@@ -1,49 +1,61 @@
-# blogster-source/.github/workflows/deploy.yml
 name: Deploy to Dist Repository
 
 on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: read  # for checkout
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout source
-      uses: actions/checkout@v3
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'npm'
-        
-    - name: Install dependencies
-      run: npm install
-      
-    - name: Build Astro site
-      run: npm run build
-      
-    - name: Deploy to dist repo
-      run: |
-        git config --global user.name "GitHub Actions"
-        git config --global user.email "actions@github.com"
-        
-        # Clone WITHOUT token in URL
-        git clone https://github.com/laucha54321/distributables-blog.git distributables-blog
-        
-        # Copy built files to dist repo
-        cd distributables-blog
-        git rm -r . || true  # Remove existing files
-        cp -r ../dist/. .
-        
-        # Commit and push
-        git add .
-        git commit -m "Deploy: Update from source repo ${{ github.sha }}"
 
-        # Configure Git to use the token from environment
-        git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/laucha54321/distributables-blog.git
-        git push origin master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Clone dist repo with PAT
+        env:
+          DIST_REPO_TOKEN: ${{ secrets.DIST_REPO_TOKEN }}
+        run: |
+          # Change TARGET_BRANCH to 'master' if your dist repo uses master
+          TARGET_BRANCH=main
+          git clone --branch "$TARGET_BRANCH" \
+            "https://x-access-token:${DIST_REPO_TOKEN}@github.com/laucha54321/distributables-blog.git" \
+            distributables-blog
+
+      - name: Copy build into dist repo
+        run: |
+          cd distributables-blog
+
+          # Remove everything except the .git directory
+          find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
+
+          # Copy new build
+          cp -r ../dist/. .
+
+          # Commit if there are changes
+          git add .
+          git -c user.name="GitHub Actions" -c user.email="actions@github.com" \
+            commit -m "Deploy: Update from source repo ${GITHUB_SHA}" || echo "No changes to commit"
+
+      - name: Push to dist repo
+        env:
+          DIST_REPO_TOKEN: ${{ secrets.DIST_REPO_TOKEN }}
+        run: |
+          cd distributables-blog
+          # Push current HEAD to the same branch we cloned
+          git push origin HEAD
