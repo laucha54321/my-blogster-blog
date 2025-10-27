@@ -31,7 +31,7 @@ jobs:
         git config --global user.email "actions@github.com"
         
         # Clone the dist repository
-        git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/yourusername/distributables-blog.git dist-repo
+        git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/laucha54321/distributables-blog.git dist-repo
         
         # Copy built files to dist repo
         cd distributables-blog
