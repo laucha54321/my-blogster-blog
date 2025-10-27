@@ -36,7 +36,7 @@ jobs:
         # Copy built files to dist repo
         cd distributables-blog
         git rm -r . || true  # Remove existing files
-        cp -r ../dist/* .
+        cp -r ../dist/. .
         
         # Commit and push
         git add .
