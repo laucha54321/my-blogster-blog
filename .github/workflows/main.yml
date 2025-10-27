@@ -32,7 +32,7 @@ jobs:
           DIST_REPO_TOKEN: ${{ secrets.DIST_REPO_TOKEN }}
         run: |
           # Change TARGET_BRANCH to 'master' if your dist repo uses master
-          TARGET_BRANCH=main
+          TARGET_BRANCH=master
           git clone --branch "$TARGET_BRANCH" \
             "https://x-access-token:${DIST_REPO_TOKEN}@github.com/laucha54321/distributables-blog.git" \
             distributables-blog
