@@ -62,8 +62,6 @@ Here are the Lists I am using:
 * OISD
 * notracking
 * EasyList
-* NSABlocklist
-* WindowsSpyBlocker (Spy)
 * HaGeZi - Multi PRO++
 
 ![Snapshot](/images/20251017205427.png)
