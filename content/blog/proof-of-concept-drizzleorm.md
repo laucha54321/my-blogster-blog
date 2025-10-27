@@ -73,7 +73,7 @@ In this case, **a foreign key is established** in the "order" entity that refere
 
 **Consideration:** Drizzle's SQL-based approach can be **both an advantage and disadvantage**, depending on the user's SQL familiarity.
 
-> **🆚 vs Prisma:** Prisma uses *more beginner-friendly operators* for those unfamiliar with SQL.
+> **vs Prisma:** Prisma uses *more beginner-friendly operators* for those unfamiliar with SQL.
 
 ![Table Structure](/images/image-4.png)
 
@@ -120,7 +120,7 @@ await db.query.posts.findMany({
 
 > **🎯 Key Difference:** Drizzle performs *only one query per statement* vs. multiple queries in other ORMs.
 
-### 🆚 Drizzle vs Prisma Performance
+### Drizzle vs Prisma Performance
 
 **Prisma's Approach:**
 - Uses *Rust engine* originally designed for multiple languages
@@ -153,7 +153,7 @@ await p1.execute({ id: 12 });
 - ✅ **Avoids repeated SQL translation**
 - ✅ **Significant performance improvement**
 
-### **📊 Benchmarks**
+### 📊 Benchmarks
 
 > **🔍 Important Note:** *These benchmarks are prepared by Drizzle's team*. While from internal sources, they provide valuable comparative insights.
 
