@@ -41,6 +41,6 @@ jobs:
         # Commit and push
         git add .
         git commit -m "Deploy: Update from source repo ${{ github.sha }}"
-        git push origin main
+        git push origin master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
