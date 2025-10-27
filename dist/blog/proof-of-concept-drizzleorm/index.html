@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html class="theme-newspaper astro-WWZ2PMX7" lang="en">
+  <head>
+    <!-- Global Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Blogster">
+    <meta name="theme-color" content="#ffffff">
+
+<!-- 
+  This is an example. 
+  Use https://realfavicongenerator.net to generate the icons and manifest. 
+-->
+<link href="/favicon.ico" rel="shortcut icon">
+
+    <!-- Primary Meta Tags --><title>ORM Presentation Report - Drizzle ORM</title>
+<meta name="title" content="ORM Presentation Report - Drizzle ORM">
+<meta name="description" content="An in-depth analysis of Drizzle ORM, covering documentation, community support, database compatibility, development process, performance benchmarks, and overall conclusions.">
+
+
+<!-- Open Graph / Facebook -->
+<meta property="og:title" content="ORM Presentation Report - Drizzle ORM">
+<meta property="og:description" content="An in-depth analysis of Drizzle ORM, covering documentation, community support, database compatibility, development process, performance benchmarks, and overall conclusions.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yourwebsiteurl.com/blog/proof-of-concept-drizzleorm">
+<meta property="article:author" content="Laureano Oliva">
+<meta property="article:published_time" content="2023-10-28T00:00:00.000Z">
+
+
+
+
+
+<!-- Twitter -->
+<meta property="twitter:title" content="ORM Presentation Report - Drizzle ORM">
+<meta property="twitter:description" content="An in-depth analysis of Drizzle ORM, covering documentation, community support, database compatibility, development process, performance benchmarks, and overall conclusions.">
+<meta property="twitter:site" content="@yourtwitterhandle">
+<meta property="twitter:creator" content="@yourtwitterhandle">
+<meta property="twitter:card" content="summary_large_image">
+
+
+<!-- {twitter.url && <meta property="twitter:url" content={twitter.url} />} -->
+
+    <!-- 
+    We don't want to use <link /> to load fonts from Google CDN 
+    but if you want to switch font this is the easiest way 
+    to check how your page will look with the new font.
+--><!-- 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=block"
+        rel="stylesheet"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;0,800;1,400&display=swap"
+        rel="stylesheet"
+    />
+--><link rel="preload" href="/fonts/roboto-mono-v22-latin-regular.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/roboto-mono-v22-latin-700.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><link rel="preload" href="/fonts/roboto-mono-v22-latin-italic.woff2" as="font" type="font/woff2" crossorigin="crossorigin"><style>
+    /* roboto-mono-regular - latin */
+    @font-face {
+      font-family: "Roboto Mono";
+      font-style: normal;
+      font-weight: 400;
+      src: local(""),
+        url("/fonts/roboto-mono-v22-latin-regular.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/roboto-mono-v22-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* roboto-mono-700 - latin */
+    @font-face {
+      font-family: "Roboto Mono";
+      font-style: normal;
+      font-weight: 700;
+      src: local(""),
+        url("/fonts/roboto-mono-v22-latin-700.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/roboto-mono-v22-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+    /* roboto-mono-italic - latin */
+    @font-face {
+      font-family: "Roboto Mono";
+      font-style: italic;
+      font-weight: 400;
+      src: local(""),
+        url("/fonts/roboto-mono-v22-latin-italic.woff2") format("woff2"),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+          url("/fonts/roboto-mono-v22-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+  </style>
+
+    <script>
+  // figure out user's preferred theme and set it as html class for tailwind before paint
+  (function () {
+    if (typeof window !== "undefined") {
+      const isSystemColorSchemeDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      const storageTheme = sessionStorage.getItem("theme");
+      if (!storageTheme && isSystemColorSchemeDark) {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#262626";
+      } else if (storageTheme === "dark") {
+        document.documentElement.classList.add("dark");
+        document.head.children.namedItem("theme-color").content = "#262626";
+      } else {
+        // we already server render light theme
+        document.head.children.namedItem("theme-color").content = "#ffffff";
+      }
+    }
+  })();
+</script>
+
+    <link href="/fontawesome/css/fontawesome.css" rel="stylesheet"><link href="/fontawesome/css/brands.css" rel="stylesheet"><link href="/fontawesome/css/solid.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/_slug_.8515a42c.css" />
+<link rel="stylesheet" href="/assets/_slug_.80c17dee.css" /><script type="module" src="/hoisted.c2fbbe1c.js"></script></head>
+
+  <body class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8 astro-WWZ2PMX7">
+    <header class="astro-NGLEQTFP">
+  <a class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial] astro-NGLEQTFP" href="#main">
+    Skip to content
+  </a>
+  <nav class="astro-NGLEQTFP">
+    <section class="text-text-bold astro-NGLEQTFP">
+      <ul class="unset flex gap-4 [&>li]:p-0 astro-NGLEQTFP">
+        <li class="astro-NGLEQTFP"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/" class="astro-NGLEQTFP unset animated-link">Home</a></li>
+        <li class="astro-NGLEQTFP"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/blog" class="astro-NGLEQTFP show unset animated-link">Blog</a></li>
+        <li class="astro-NGLEQTFP"><!-- DO NOT FORMAT. IT ADDS AN EXTRA SPACE ON RENDERED CONTENT. --><a href="/projects" class="astro-NGLEQTFP unset animated-link">Projects</a></li>
+      </ul>
+    </section>
+  </nav>
+  <div class="justify-self-end flex items-center content-center text-text-bold astro-NGLEQTFP">
+    <mode-toggle class="flex astro-ZBNHZGTA">
+  <button class="justify-self-end bg-black dark:bg-white ml-4 inline-flex h-6 w-11 items-center rounded-full astro-ZBNHZGTA" id="mode-toggle" role="switch" type="button" tabindex="0" aria-checked="false" data-headlessui-state=""><span class="sr-only astro-ZBNHZGTA">Toggle dark mode</span><span id="mode-circle" class="light inline-block h-4 w-4 rounded-full bg-gradient-to-tr invisible astro-ZBNHZGTA"><span class="absolute top-0 right-0 w-[10px] h-[10px] rounded-full bg-white scale-[0] astro-ZBNHZGTA"></span>
+    </span>
+  </button>
+</mode-toggle>
+
+<script>
+  function updateHTMLTheme(mode) {
+    const themeColorMetaTag = document.head.querySelector(
+      'meta[name="theme-color"]'
+    );
+
+    if (mode === "dark") {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+      if (themeColorMetaTag) {
+        // @ts-ignore
+        themeColorMetaTag.content = "#262626";
+      }
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+      if (themeColorMetaTag) {
+        // @ts-ignore
+        themeColorMetaTag.content = "#ffffff";
+      }
+    }
+  }
+  function updateStorageTheme(mode) {
+    if (mode === "dark") {
+      sessionStorage.setItem("theme", "dark");
+    } else {
+      sessionStorage.setItem("theme", "light");
+    }
+  }
+  class ModeToggle extends HTMLElement {
+    constructor() {
+      super();
+      // keep a property to track current mode
+      this._currentMode = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    }
+
+    connectedCallback() {
+      const toggle = this.querySelector("button");
+      const iconElem = toggle?.querySelector("#mode-circle");
+
+      if (!iconElem || !toggle) return;
+
+      // set the toggle mode based on the html classname set in ThemeScript.astro
+      if (this._currentMode === "dark") {
+        iconElem.classList.remove("light");
+        iconElem.classList.add("dark");
+      }
+
+      // we load the toggle invisible to prevent flash
+      // remove visibility class after setting initial dark/light class
+      iconElem.classList.remove("invisible");
+
+      // Each time the button is clicked, update the mode.
+      toggle.addEventListener("click", () => {
+        if (this._currentMode === "dark") {
+          const modeToSwitch = "light";
+          iconElem.classList.remove("dark");
+          iconElem.classList.add("light");
+          updateHTMLTheme(modeToSwitch);
+          updateStorageTheme(modeToSwitch);
+          this._currentMode = modeToSwitch;
+        } else {
+          const modeToSwitch = "dark";
+          iconElem.classList.remove("light");
+          iconElem.classList.add("dark");
+          updateHTMLTheme(modeToSwitch);
+          updateStorageTheme(modeToSwitch);
+          this._currentMode = modeToSwitch;
+        }
+
+        // prevent slide animation on page load for dark mode
+        if (!iconElem.classList.contains("duration-300")) {
+          iconElem.classList.add("duration-300");
+        }
+      });
+    }
+  }
+
+  if (!customElements.get("mode-toggle")) {
+    customElements.define("mode-toggle", ModeToggle);
+  }
+</script>
+
+
+  </div>
+</header>
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          processEscapes: true,
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <main id="main" class="astro-WWZ2PMX7">
+      <section class="blog-post prose max-w-none prose-newspaper astro-WWZ2PMX7">
+        <h1 class="m-0 pt-1 mb-[0.375em] after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current astro-WWZ2PMX7">
+          ORM Presentation Report - Drizzle ORM
+        </h1>
+        <time class="block mb-[2em] text-text-muted astro-WWZ2PMX7">Oct 27, 2023</time>
+        <article><blockquote><p><strong>📝 Author's Note:</strong> <em>This document was prepared as part of a university software development course. It presents a comparative analysis of the Drizzle ORM for academic purposes.</em></p></blockquote><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="documentation" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="📚 Documentation" href="#documentation" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>📚 Documentation</span></h2>
+  </div><p><strong>Drizzle's documentation is effective</strong>, being both <strong>simple and comprehensive</strong>. It provides the necessary guidelines for proper Drizzle implementation.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="community" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="👥 Community" href="#community" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>👥 Community</span></h2>
+  </div><p><strong>Drizzle's community is very dynamic</strong> and, according to current trends, <strong>is likely to become one of the most popular ORMs in the TypeScript ecosystem</strong>. Although it has fewer GitHub stars compared to Prisma, <em>it's important to note that Drizzle is a more recent project</em>.</p><p><img src="/images/star-history-20231026.webp" alt="Repository Stars"/></p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="database-support" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="🗄️ Database Support" href="#database-support" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>🗄️ Database Support</span></h2>
+  </div><p>Drizzle supports <strong>the main databases used in the market</strong>, such as <strong>PostgreSQL, MySQL, and SQLite</strong>.</p><blockquote><p><strong>🌟 Key Differentiator:</strong> What sets Drizzle apart from other solutions is its ability to provide specific libraries, which they refer to as <strong>&quot;dialects,&quot; for each of these databases</strong>. This allows Drizzle to offer <em>features tailored to the particularities of each database management system</em>, rather than using generic libraries.</p></blockquote><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="development-process" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="🛠️ Development Process" href="#development-process" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>🛠️ Development Process</span></h2>
+  </div><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="data-format" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="Data Format" href="#data-format" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>Data Format</span></h3>
+  </div><p><strong>Drizzle uses TypeScript to define the data structure (schema).</strong></p><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">const</span> customer <span class="token operator">=</span> <span class="token function">pgTable</span><span class="token punctuation">(</span><span class="token string">"customer"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token function">uuid</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">defaultRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">primaryKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> customerRelations <span class="token operator">=</span> <span class="token function">relations</span><span class="token punctuation">(</span>customer<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> many <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  order<span class="token operator">:</span> <span class="token function">many</span><span class="token punctuation">(</span>order<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> order <span class="token operator">=</span> <span class="token function">pgTable</span><span class="token punctuation">(</span><span class="token string">"order"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token function">uuid</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">defaultRandom</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">primaryKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  customer_id<span class="token operator">:</span> <span class="token function">uuid</span><span class="token punctuation">(</span><span class="token string">"customer_id"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">notNull</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">references</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> customer<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p>In this case, <strong>a foreign key is established</strong> in the &quot;order&quot; entity that references the customer making the order, creating <strong>a relationship between the &quot;customer&quot; and &quot;order&quot; entities</strong>.</p><p><strong>Drizzle provides flexibility</strong> - we can use a single <code>.ts</code> file for data schemas or multiple files to organize structures.</p><blockquote><p><strong>💡 Our Assessment:</strong> Drizzle <em>might sacrifice some readability</em> by using TypeScript for data relationships. While TypeScript users may not find this problematic, <strong>Prisma's approach to this task is more readable</strong> in our view.</p></blockquote><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="migrations" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="🔄 Migrations" href="#migrations" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>🔄 Migrations</span></h3>
+  </div><p><strong>Once a modification is made to the data schema</strong>, simply executing a command applies changes to the database. This process is <em>very similar to Prisma's workflow</em>.</p><blockquote><p><strong>🔧 Key Feature:</strong> Drizzle includes <strong>smart column renaming protection</strong> - preventing accidental column deletion when renaming columns.</p></blockquote><p><img src="/images/image.png" alt="Migration Menu"/></p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="generate-the-client" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="⚡ Generate the Client" href="#generate-the-client" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>⚡ Generate the Client</span></h3>
+  </div><p><strong>Since Drizzle uses TypeScript</strong> for data schema definition, it <strong>leverages type inference directly</strong>. No additional migration is needed to benefit from this inference once schema changes are made.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="syntax-and-queries" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="📝 Syntax and Queries" href="#syntax-and-queries" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>📝 Syntax and Queries</span></h3>
+  </div><p><strong>Drizzle provides SQL-like operators</strong> for queries, maintaining <strong>SQL-like syntax with a more styled appearance</strong>.</p><p><strong>Key Advantage:</strong> <em>Full TypeScript inference support</em> in queries.</p><p><strong>Consideration:</strong> Drizzle's SQL-based approach can be <strong>both an advantage and disadvantage</strong>, depending on the user's SQL familiarity.</p><blockquote><p><strong>vs Prisma:</strong> Prisma uses <em>more beginner-friendly operators</em> for those unfamiliar with SQL.</p></blockquote><p><img src="/images/image-4.png" alt="Table Structure"/></p><p><strong>Example Data Structure:</strong></p><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">const</span> posts <span class="token operator">=</span> <span class="token function">pgTable</span><span class="token punctuation">(</span><span class="token string">"posts"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token function">serial</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">primaryKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  content<span class="token operator">:</span> <span class="token function">text</span><span class="token punctuation">(</span><span class="token string">"content"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">notNull</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> postsRelations <span class="token operator">=</span> <span class="token function">relations</span><span class="token punctuation">(</span>posts<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> many <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  comments<span class="token operator">:</span> <span class="token function">many</span><span class="token punctuation">(</span>comments<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> comments <span class="token operator">=</span> <span class="token function">pgTable</span><span class="token punctuation">(</span><span class="token string">"comments"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  id<span class="token operator">:</span> <span class="token function">serial</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">primaryKey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  content<span class="token operator">:</span> <span class="token function">text</span><span class="token punctuation">(</span><span class="token string">"content"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">notNull</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  postId<span class="token operator">:</span> <span class="token function">integer</span><span class="token punctuation">(</span><span class="token string">"post_id"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">references</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> posts<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p><strong>Example Query:</strong></p><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">await</span> db<span class="token punctuation">.</span>query<span class="token punctuation">.</span>posts<span class="token punctuation">.</span><span class="token function">findMany</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token function-variable function">where</span><span class="token operator">:</span> <span class="token punctuation">(</span>posts<span class="token punctuation">,</span> <span class="token punctuation">{</span> eq <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">eq</span><span class="token punctuation">(</span>posts<span class="token punctuation">.</span>id<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">with</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    comments<span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token function-variable function">where</span><span class="token operator">:</span> <span class="token punctuation">(</span>comments<span class="token punctuation">,</span> <span class="token punctuation">{</span> lt <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token function">lt</span><span class="token punctuation">(</span>comments<span class="token punctuation">.</span>createdAt<span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p><strong>In this example:</strong></p><ul><li><strong><code>eq</code> operator</strong> handles equality (finding post with id = 1)</li><li><strong><code>lt</code> operator</strong> means &quot;less than&quot; (comments before current date)</li></ul><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="performance" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="🚀 Performance" href="#performance" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>🚀 Performance</span></h2>
+  </div><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="core-performance-advantage" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="Core Performance Advantage" href="#core-performance-advantage" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>Core Performance Advantage</span></h3>
+  </div><p><strong>Drizzle stands out for its speed</strong> as it consists of a <strong>thin abstraction layer in TypeScript over SQL</strong>.</p><blockquote><p><strong>🎯 Key Difference:</strong> Drizzle performs <em>only one query per statement</em> vs. multiple queries in other ORMs.</p></blockquote><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="drizzle-vs-prisma-performance" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="Drizzle vs Prisma Performance" href="#drizzle-vs-prisma-performance" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>Drizzle vs Prisma Performance</span></h3>
+  </div><p><strong>Prisma's Approach:</strong></p><ul><li>Uses <em>Rust engine</em> originally designed for multiple languages</li><li>Currently focuses <em>only on TypeScript/JavaScript</em></li><li>Performs <em>multiple queries for join operations</em></li><li><strong>Brings data to Rust engine</strong> for joins instead of using database joins</li></ul><p><strong>Drizzle's Advantage:</strong></p><ul><li><strong>Translates syntax to single SQL statement</strong></li><li><strong>Leverages database-native join capabilities</strong></li><li><em>Significantly more efficient</em> for complex operations</li></ul><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="prepared-statements" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="🔧 Prepared Statements" href="#prepared-statements" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>🔧 Prepared Statements</span></h3>
+  </div><p><strong>Extremely useful feature</strong> that optimizes query performance:</p><pre class="language-typescript"><code class="language-typescript"><span class="token keyword">const</span> p1 <span class="token operator">=</span> db
+  <span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>customers<span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">where</span><span class="token punctuation">(</span><span class="token function">eq</span><span class="token punctuation">(</span>customers<span class="token punctuation">.</span>id<span class="token punctuation">,</span> sql<span class="token punctuation">.</span><span class="token function">placeholder</span><span class="token punctuation">(</span><span class="token string">"id"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token string">"p1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">await</span> p1<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">await</span> p1<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">{</span> id<span class="token operator">:</span> <span class="token number">12</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+
+<p><strong>Benefits:</strong></p><ul><li>✅ <strong>Build query once</strong>, reuse multiple times</li><li>✅ <strong>Avoids repeated SQL translation</strong></li><li>✅ <strong>Significant performance improvement</strong></li></ul><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="benchmarks" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="📊 Benchmarks" href="#benchmarks" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>📊 Benchmarks</span></h3>
+  </div><blockquote><p><strong>🔍 Important Note:</strong> <em>These benchmarks are prepared by Drizzle's team</em>. While from internal sources, they provide valuable comparative insights.</p></blockquote><p><strong>Benchmark Results - Select All:</strong> <img src="/images/image-2.webp" alt="Benchmark Select"/></p><p><strong>Even in simple &quot;select all&quot; queries</strong>, there's a <em>marked difference</em> between using prepared statements and not using them.</p><p><strong>Benchmark Results - Complex Join:</strong> <img src="/images/image-3.webp" alt="Benchmark Join"/></p><p><strong>For complex queries</strong> (select + where + left join), the performance difference is <em>even more dramatic</em>.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h2 id="conclusion" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="✅ Conclusion" href="#conclusion" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>✅ Conclusion</span></h2>
+  </div><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="strengths:" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="Strengths:" href="#strengths:" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>Strengths:</span></h3>
+  </div><ul><li>✅ <strong>Excellent flexibility and simplicity</strong></li><li>✅ <strong>Superior performance</strong> compared to most popular ORMs</li><li>✅ <strong>Excellent prepared statements implementation</strong></li><li>✅ <strong>Single query per statement</strong> architecture</li><li>✅ <strong>Straightforward migration management</strong></li><li>✅ <strong>Simple data schema definition</strong></li></ul><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="considerations:" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="Considerations:" href="#considerations:" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>Considerations:</span></h3>
+  </div><ul><li>⚠️ <strong>Manual left join management</strong> required</li><li>⚠️ <strong>Not completely SQL-free</strong> - some SQL knowledge beneficial</li></ul><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
+  <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
+  should wrap div in hx. -->
+    <h3 id="final-recommendation" class="group flex -ml-[1rem]"><span class="not-prose w-[1rem] -mt-[0.125rem]">
+            <a aria-label="link to this heading" aria-describedby="🎯 Final Recommendation" href="#final-recommendation" class="unset align-middle text-[14px] text-text-link opacity-0 group-hover:opacity-100 group-focus:opacity-100 focus:opacity-100 group-active:opacity-100 active:opacity-100">
+                <i class="fa-solid fa-hashtag"></i>
+            </a>
+        </span><span>🎯 Final Recommendation</span></h3>
+  </div><p><strong>Drizzle is an ideal choice for developers who:</strong></p><ul><li>Value <strong>performance and speed</strong></li><li>Want <strong>simple migration and schema management</strong></li><li>Are comfortable with <strong>some SQL concepts</strong></li><li>Need <strong>TypeScript-first solution</strong></li></ul><blockquote><p><strong>🏆 Bottom Line:</strong> When using prepared statements and considering its efficient single-query approach, <strong>Drizzle stands as one of the most solid ORM choices</strong> in the TypeScript ecosystem.</p></blockquote><pre class="language-typescript"><code class="language-typescript">
+Key formatting improvements made<span class="token operator">:</span>
+<span class="token operator">-</span> <span class="token operator">**</span>Bold<span class="token operator">**</span> <span class="token keyword">for</span> key points and advantages
+<span class="token operator">-</span> <span class="token operator">*</span>Italics<span class="token operator">*</span> <span class="token keyword">for</span> emphasis and comparisons
+<span class="token operator">-</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">></span><span class="token template-punctuation string">`</span></span> blockquotes <span class="token keyword">for</span> important notes and differentiators
+<span class="token operator">-</span> <span class="token operator">**</span>🎯<span class="token operator">**</span> Emojis <span class="token keyword">for</span> visual section markers
+<span class="token operator">-</span> <span class="token operator">**</span>✅<span class="token operator">/</span>⚠️<span class="token operator">**</span> Clear strength<span class="token operator">/</span>consideration indicators
+<span class="token operator">-</span> Better section organization <span class="token keyword">with</span> clear visual hierarchy
+<span class="token operator">-</span> Technical terms highlighted consistently
+<span class="token operator">-</span> Improved readability <span class="token keyword">while</span> maintaining professional tone</code></pre>
+
+</article>
+      </section>
+    </main>
+    <footer class="text-sm leading-[1.75] mt-4 astro-ELCN4FCP">
+  <div class="astro-ELCN4FCP">
+    This blog is powered by <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00abda] to-[#1476ff] hover:after:bg-gradient-to-r hover:after:from-[#00abda] hover:after:to-[#1476ff] astro-ELCN4FCP" href="https://astro.build" target="_blank">Astro</a> with the <a class="unset gradient-link tracking-wider font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#00abda] to-[#1476ff] hover:after:bg-gradient-to-r hover:after:from-[#00abda] hover:after:to-[#1476ff] astro-ELCN4FCP" href="https://github.com/flexdinesh/blogster" target="_blank">Blogster Newspaper</a>
+  </div>
+</footer>
+
+
+    
+  </body>
+</html>
