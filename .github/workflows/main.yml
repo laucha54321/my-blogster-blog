@@ -1,0 +1,46 @@
+# blogster-source/.github/workflows/deploy.yml
+name: Deploy to Dist Repository
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v3
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm install
+      
+    - name: Build Astro site
+      run: npm run build
+      
+    - name: Deploy to dist repo
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        
+        # Clone the dist repository
+        git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/yourusername/blogster-dist.git dist-repo
+        
+        # Copy built files to dist repo
+        cd dist-repo
+        git rm -r . || true  # Remove existing files
+        cp -r ../dist/* .
+        
+        # Commit and push
+        git add .
+        git commit -m "Deploy: Update from source repo ${{ github.sha }}"
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
