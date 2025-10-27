@@ -59,7 +59,7 @@ In this case, **a foreign key is established** in the "order" entity that refere
 
 > **🔧 Key Feature:** Drizzle includes **smart column renaming protection** - preventing accidental column deletion when renaming columns.
 
-![Migration Menu](/images/image.png)
+![Migration Menu](/images/image.webp)
 
 ### ⚡ Generate the Client
 

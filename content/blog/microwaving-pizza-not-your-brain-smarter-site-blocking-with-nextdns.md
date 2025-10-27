@@ -26,23 +26,23 @@ To block websites you have two options in NextDNS,a "Deny List" or using "Parent
 ### 2.1 Deny List
 On the top Panel you can go to Deny list. Here, you can setup any domain you want to block. Here's a snapshot of the domains I personally block. Your list will depend on your goals:
 
-![Snapshot](/images/20251017202541.png)
+![Snapshot](/images/20251017202541.webp)
 
 ### 2.2 Parental Control
 Parental Controls offer less flexibility—you are restricted to toggling predefined sites. As can bee seen here:
 
-![Snapshot](/images/20251017202746.png)
+![Snapshot](/images/20251017202746.webp)
 
 Still, they come with useful features like:
 #### Category Blocking
 This is exactly what it sound like. It has some categories that you can block like for example porn, gambling, dating, privacy, social networks, etc. 
 
-![Snapshot](/images/20251017203232.png)
+![Snapshot](/images/20251017203232.webp)
 
 #### Recreation Time
 This feature is surprisingly handy. You can schedule windows of access for blocked categories—perfect for those who want to keep things like adult content off-limits except for, say, Saturday night existential spirals.
 
-![Snapshot](/images/20251017203247.png)
+![Snapshot](/images/20251017203247.webp)
 
 
 ## 3. Blocking Ads
@@ -64,7 +64,7 @@ Here are the Lists I am using:
 * EasyList
 * HaGeZi - Multi PRO++
 
-![Snapshot](/images/20251017205427.png)
+![Snapshot](/images/20251017205427.webp)
 
 ## 4. How to set it up in your device
 Once you configure your profile, it’s time to apply it to your device.
