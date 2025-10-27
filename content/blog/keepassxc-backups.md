@@ -19,6 +19,7 @@ Without backups, you're not just locked out of instagram you're locked out of yo
 
 ## The Setup: 5 Minutes Now, Peace of Mind Forever
 
+
 ### Step 1: Find the Magic Checkbox
 Open KeePassXC and head to **Tools → Settings → General**. Scroll down until you see **"Backup database file before saving."** It's located **in the "File Management" section**. Check that box. **Congratulations, you've just implemented 90% of a decent backup strategy**.
 
