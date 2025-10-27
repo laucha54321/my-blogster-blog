@@ -156,7 +156,6 @@ await p1.execute({ id: 12 });
 ### 📊 Benchmarks
 
 
-
 > **🔍 Important Note:** *These benchmarks are prepared by Drizzle's team*. While from internal sources, they provide valuable comparative insights.
 
 **Benchmark Results - Select All:**
