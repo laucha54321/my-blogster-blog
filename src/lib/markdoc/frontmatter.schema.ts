@@ -14,8 +14,6 @@ const baseSchema = z.object({
   }),
 });
 
-
-
 /*
   Blog posts could be of two types —
   1. The posts you write in markdown files in content/blog/*.md
@@ -46,6 +44,9 @@ export const blog = z.discriminatedUnion("external", [
   }),
 ]);
 
+// Updated project schema with description and optional tech field
 export const project = baseSchema.extend({
   url: z.string(),
+  description: z.optional(z.string()), // Add this line
+  tech: z.array(z.string()).optional(), // Optional: add tech stack support
 });

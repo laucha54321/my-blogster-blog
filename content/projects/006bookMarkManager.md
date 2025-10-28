@@ -1,6 +1,6 @@
 ---
 title: "Personal - BookMark Manager - GoLang"
-description: "Administrador de BookMarks, hace parsing de el html en el que exportan los navegadores."
+description: "BookMark Manager that parses the HTML exported by browsers"
 date: 2023-10-21
-url: https://github.com/laucha54321/SudokuSolver
----
+url: https://github.com/laucha54321/bookmarks-manager
+tech: ["Go", "HTML Parsing", "Bookmark Management"]
