@@ -33,13 +33,14 @@ const { content, frontmatter } = await readOne({
   frontmatterSchema: blog,
 });
 
+
 const ogImageAbsoluteUrl =
   frontmatter.external !== true && frontmatter.ogImagePath
     ? new URL(frontmatter.ogImagePath, SITE_URL).toString()
     : undefined;
 ---
 
-<ContentLayout title={frontmatter.title} date={frontmatter.date}>
+<ContentLayout title={frontmatter.title} date={frontmatter.date} frontmatter={frontmatter}>
   <BlogPostMeta
     title={frontmatter.title}
     description={frontmatter.external ? undefined : frontmatter.description}
@@ -48,5 +49,6 @@ const ogImageAbsoluteUrl =
     ogImageAbsoluteUrl={ogImageAbsoluteUrl}
     slot="meta"
   />
+  
   <Renderer content={content} slot="content" />
 </ContentLayout>

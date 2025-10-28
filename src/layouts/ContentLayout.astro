@@ -14,12 +14,13 @@ import Favicon from "./Favicon.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
+
 export interface Props {
   title: string;
   date: Date;
 }
 
-const { title, date } = Astro.props;
+const { title, date, frontmatter } = Astro.props;
 const formattedDate = new Date(date).toLocaleDateString("en-us", {
   year: "numeric",
   month: "short",
@@ -50,6 +51,14 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
         >
           {title}
         </h1>
+            <img 
+              src={frontmatter.heroImage}
+              alt={frontmatter.title}
+              fetchpriority="high"
+              width="1200"
+              height="600"
+              class="hero-image"
+            />
         <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
         <slot name="content" />
       </section>

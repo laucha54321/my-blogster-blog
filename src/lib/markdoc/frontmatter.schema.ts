@@ -14,6 +14,8 @@ const baseSchema = z.object({
   }),
 });
 
+
+
 /*
   Blog posts could be of two types —
   1. The posts you write in markdown files in content/blog/*.md
@@ -24,12 +26,14 @@ const baseSchema = z.object({
   simplify this to just use the markdown schema.
 */
 export const blog = z.discriminatedUnion("external", [
+  
   // markdown
   baseSchema.extend({
     external: z.literal(false),
     description: z.optional(z.string()),
     ogImagePath: z.optional(z.string()),
     canonicalUrl: z.optional(z.string()),
+    heroImage: z.string().optional(), // Make it optional
   }),
   // external link
   baseSchema.extend({

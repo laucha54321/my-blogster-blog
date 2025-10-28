@@ -3,9 +3,9 @@ external: false
 title: "Microwaving Pizza, Not Your Brain: Smarter Site Blocking with NextDNS"
 description: "A straightforward guide to using NextDNS could host for effective and manageable website blocking."
 date: 2025-10-17
+heroImage: "/images/8dc953c7-f94d-4575-8148-5058b7408024.webp"
 ---
 
-![Microwaving Pizza](/images/8dc953c7-f94d-4575-8148-5058b7408024.webp)
 
 If you're trying to be more intentional with how you spend your time online, blocking certain domain names can help curb mindless scrolling.
 
