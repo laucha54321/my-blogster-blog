@@ -5,7 +5,7 @@ description: "How a simple database comparison turned into a meta-programming ni
 date: 2025-10-28
 heroImage: "/images/Screenshot 2025-10-28 180350.webp"
 ---
-> You'd think it's obvious when you become the villain. You picture a maniacal laugh, a dramatic reveal. But in engineering, evil is boring. It just sounds like 'best practices' and 'scalability.
+> You'd think it's obvious when you become the villain. You picture a maniacal laugh, a dramatic reveal. But in engineering, evil is boring. It just sounds like 'best practices' and 'scalability'.
 
 I never meant to build a monster. It started with a straightforward task: compare two messy databases to see if they were syncing correctly. I was just going to write a SQL query. What could possibly go wrong?
 
