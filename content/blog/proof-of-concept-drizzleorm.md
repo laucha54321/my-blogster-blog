@@ -3,6 +3,7 @@ external: false
 title: ORM Presentation Report - Drizzle ORM
 description: "An in-depth analysis of Drizzle ORM, covering documentation, community support, database compatibility, development process, performance benchmarks, and overall conclusions."
 date: 2023-10-28
+heroImage: "/images/star-history-20231026.webp"
 ---
 
 > **📝 Author's Note:** *This document was prepared as part of a university software development course. It presents a comparative analysis of the Drizzle ORM for academic purposes.*
