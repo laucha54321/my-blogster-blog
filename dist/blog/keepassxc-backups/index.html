@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="theme-newspaper astro-WWZ2PMX7" lang="en">
+<html class="theme-newspaper astro-ET6PNF5F" lang="en">
   <head>
     <!-- Global Metadata -->
     <meta charset="utf-8">
@@ -18,27 +18,6 @@
 <meta name="description" content="A simple guide to setting up automatic backups in KeePassXC to protect your password database.">
 
 
-<!-- Open Graph / Facebook -->
-<meta property="og:title" content="Don't Lose Your Digital Keys: The Lazy Person's Guide to KeePassXC Backups">
-<meta property="og:description" content="A simple guide to setting up automatic backups in KeePassXC to protect your password database.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://yourwebsiteurl.com/blog/keepassxc-backups">
-<meta property="article:author" content="Laureano Oliva">
-<meta property="article:published_time" content="2023-12-13T00:00:00.000Z">
-
-
-
-
-
-<!-- Twitter -->
-<meta property="twitter:title" content="Don't Lose Your Digital Keys: The Lazy Person's Guide to KeePassXC Backups">
-<meta property="twitter:description" content="A simple guide to setting up automatic backups in KeePassXC to protect your password database.">
-<meta property="twitter:site" content="@yourtwitterhandle">
-<meta property="twitter:creator" content="@yourtwitterhandle">
-<meta property="twitter:card" content="summary_large_image">
-
-
-<!-- {twitter.url && <meta property="twitter:url" content={twitter.url} />} -->
 
     <!-- 
     We don't want to use <link /> to load fonts from Google CDN 
@@ -61,6 +40,7 @@
       font-family: "Roboto Mono";
       font-style: normal;
       font-weight: 400;
+      font-display: swap; 
       src: local(""),
         url("/fonts/roboto-mono-v22-latin-regular.woff2") format("woff2"),
         /* Chrome 26+, Opera 23+, Firefox 39+ */
@@ -112,12 +92,13 @@
   })();
 </script>
 
-    <link href="/fontawesome/css/fontawesome.css" rel="stylesheet"><link href="/fontawesome/css/brands.css" rel="stylesheet"><link href="/fontawesome/css/solid.min.css" rel="stylesheet">
+    <link href="/fontawesome/css/fontawesome.bareminimum.css" rel="stylesheet"><link href="/fontawesome/css/brands.bareminimum.css" rel="stylesheet">
 
   <link rel="stylesheet" href="/assets/_slug_.8515a42c.css" />
-<link rel="stylesheet" href="/assets/_slug_.80c17dee.css" /><script type="module" src="/hoisted.c2fbbe1c.js"></script></head>
+<link rel="stylesheet" href="/assets/_slug_.001bf06f.css" /><script type="module">window.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".gist-iframe").forEach(t=>{const n=t.dataset.id;let e=t.document;t.contentDocument?e=t.contentDocument:t.contentWindow&&(e=t.contentWindow.document);const o=`<script type="text/javascript" src="${`https://gist.github.com/${n}.js`}"><\/script>`,s="<style>*{font-size:12px;}</style>",c=`onload="parent.document.getElementById('${`gist-${n}`}').style.height=document.body.scrollHeight + 'px'"`,d=`<html><head><base target="_parent">${s}</head><body ${c}>${o}</body></html>`;e.open(),e.writeln(d),e.close()})});
+</script></head>
 
-  <body class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8 astro-WWZ2PMX7">
+  <body class="max-w-3xl mx-auto min-h-screen px-6 sm:px-8 astro-ET6PNF5F">
     <header class="astro-NGLEQTFP">
   <a class="unset absolute z-10 left-[50%] -top-[100rem] translate-x-[-50%] bg-white text-black px-8 py-2 focus:top-[initial] astro-NGLEQTFP" href="#main">
     Skip to content
@@ -225,25 +206,12 @@
   </div>
 </header>
 
-    
-    <script type="text/x-mathjax-config">
-      MathJax = {
-        tex: {
-          inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
-          processEscapes: true,
-        },
-      };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <main id="main" class="astro-WWZ2PMX7">
-      <section class="blog-post prose max-w-none prose-newspaper astro-WWZ2PMX7">
-        <h1 class="m-0 pt-1 mb-[0.375em] after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current astro-WWZ2PMX7">
+    <main id="main" class="astro-ET6PNF5F">
+      <section class="blog-post prose max-w-none prose-newspaper astro-ET6PNF5F">
+        <h1 class="m-0 pt-1 mb-[0.375em] after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current astro-ET6PNF5F">
           Don&#39;t Lose Your Digital Keys: The Lazy Person&#39;s Guide to KeePassXC Backups
         </h1>
-        <time class="block mb-[2em] text-text-muted astro-WWZ2PMX7">Dec 12, 2023</time>
+        <time class="block mb-[2em] text-text-muted astro-ET6PNF5F">Dec 12, 2023</time>
         <article><p><img src="/images/be8d0fae-91c6-4a1b-8c50-cb1459c0ec31.webp" alt="Backup Image"/></p><p>Let's be real: <strong>backup advice is usually about as exciting as watching paint dry</strong>. But losing your password database? That's the digital equivalent of your house keys, wallet, and social life all vanishing into the void at once.</p><p>I'm going to show you how to set up KeePassXC backups so simple that even <em>future-you</em> (who's probably tired and just wants to log into Netflix) will be grateful.</p><div class="after:mt-6 after:content-[''] after:block after:h-[1px] after:w-[100%] after:border-b-[1px] after:border-current">
   <!-- TODO: Rethink how to add the bottom border. Shouldn't wrap hx in div.
   should wrap div in hx. -->

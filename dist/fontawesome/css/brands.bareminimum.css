@@ -27,6 +27,22 @@
 }
 
 
+.fa-medium:before {
+  content: "\f23a";
+}
+
+.fa-medium-m:before {
+  content: "\f23a";
+}
+
+.fa-linkedin-in:before {
+  content: "\f0e1";
+}
+
+.fa-linkedin:before {
+  content: "\f08c";
+}
+
 .fa-github-alt:before {
   content: "\f113";
 }
