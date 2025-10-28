@@ -51,7 +51,8 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
         >
           {title}
         </h1>
-            <img 
+        <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
+                    <img 
               src={frontmatter.heroImage}
               alt={frontmatter.title}
               fetchpriority="high"
@@ -59,7 +60,6 @@ const formattedDate = new Date(date).toLocaleDateString("en-us", {
               height="600"
               class="hero-image"
             />
-        <time class="block mb-[2em] text-text-muted">{formattedDate}</time>
         <slot name="content" />
       </section>
     </main>
