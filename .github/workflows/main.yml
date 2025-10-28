@@ -33,7 +33,6 @@ jobs:
           # Install html-minifier globally
           npm install -g html-minifier
           
-          # Minify ALL HTML files in the dist folder
           echo "Minifying HTML files..."
           find dist -name "*.html" -exec html-minifier \
             --collapse-whitespace \
@@ -45,6 +44,10 @@ jobs:
             --use-short-doctype \
             --minify-css true \
             --minify-js true \
+            --case-sensitive \
+            --decode-entities \
+            --sort-attributes \
+            --sort-class-name \
             -o {} {} \;
           
           echo "HTML minification complete!"
