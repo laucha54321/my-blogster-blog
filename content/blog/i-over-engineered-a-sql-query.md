@@ -22,6 +22,7 @@ That was smart. 
 That was fine.
 
 If I had stopped JSONing at that point, everything would have been okay,
+
 it was great JSONing up to that point.
 
 But it didn't end there…
@@ -51,6 +52,7 @@ It sounded scalable. 
 It sounded like I was building a house of cards.
 
 So I started building the JSON parser. Like one does. 
+
 Started to get some errors on the screen like expected. 
 
 Fixed the first error, another one popped up. Fixed that one, changed the JSON, and it broke, fixed that too. 
